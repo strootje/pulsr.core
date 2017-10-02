@@ -12,33 +12,33 @@ namespace Pulsr::Core
 	Event<Args>::Event()
 		: _delegates(DelegateList())
 	{
-		DLOGEVT(INFO, CONSTRUCT);
+		DLOG(DIAG);
 	}
 
 	template<typename Args>
 	Event<Args>::~Event()
 	{
-		DLOGEVT(INFO, DESTRUCT);
+		DLOG(DIAG);
 		Dispose();
 	}
 
 	template<typename Args>
 	void Event<Args>::Dispose()
 	{
-		DLOGEVT(INFO, DISPOSE);
+		DLOG(DIAG);
 	}
 
 	template<typename Args>
 	void Event<Args>::operator+=( const Delegate& delegate )
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 		_delegates.push_back(delegate);
 	}
 
 	template<typename Args>
 	void Event<Args>::operator()( const Args& args )
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 		std::for_each(_delegates.begin(), _delegates.end(), [args]( const auto& delegate )
 		{
 			delegate(args);

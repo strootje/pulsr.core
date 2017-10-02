@@ -7,29 +7,29 @@ namespace Pulsr::Core::Window
 		, OnOpen(Events::WindowOpenedEvent())
 		, OnClose(Events::WindowClosedEvent())
 	{
-		DLOGEVT(INFO, CONSTRUCT);
+		DLOG(DIAG);
 	}
 
 	Window::~Window()
 	{
-		DLOGEVT(INFO, DESTRUCT);
+		DLOG(DIAG);
 		Dispose();
 	}
 
 	void Window::Dispose()
 	{
-		DLOGEVT(INFO, DISPOSE);
+		DLOG(DIAG);
 	}
 
 	void Window::Open()
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 		OnOpen(Events::WindowOpenedEventArgs(_name));
 	}
 
 	void Window::Close()
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 		OnClose(Events::WindowClosedEventArgs(_name));
 	}
 }

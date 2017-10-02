@@ -4,27 +4,27 @@ namespace Pulsr::Core::Window
 {
 	Manager::Manager()
 	{
-		DLOGEVT(INFO, CONSTRUCT);
+		DLOG(DIAG);
 	}
 
 	Manager::~Manager()
 	{
-		DLOGEVT(INFO, DESTRUCT);
+		DLOG(DIAG);
 		Dispose();
 	}
 
 	void Manager::Dispose()
 	{
-		DLOGEVT(INFO, DISPOSE);
+		DLOG(DIAG);
 	}
 	
 	void Manager::OnWindowOpen( const Events::WindowOpenedEventArgs& args )
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 	}
 
 	void Manager::OnWindowClose( const Events::WindowClosedEventArgs& args )
 	{
-		DLOGEVT(INFO, CALL);
+		DLOG(DIAG);
 	}
 }

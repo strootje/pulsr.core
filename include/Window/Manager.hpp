@@ -1,25 +1,33 @@
-#ifndef __PULSRCORE_WINDOW_MANAGER__H__
-#define __PULSRCORE_WINDOW_MANAGER__H__
+#ifndef __PULSR_CORE_WINDOW_MANAGER__H__
+#define __PULSR_CORE_WINDOW_MANAGER__H__
 
-#include "./Window.hpp"
 #include <string>
 
-namespace Pulsr::Core::Window
+namespace Pulsr { namespace Core { namespace Window
 {
+	/**
+	 * A Window Manager
+	 */
 	class Manager
 	{
 	public:
-		Manager();
-		virtual ~Manager();
-		void Dispose();
+		/**
+		 * Create a new window
+		 * \param[in]  name  The name of the new window
+		 */
 		virtual void Create( const std::string& name ) = 0;
+
+		/**
+		 * Method to check if there is any work remaining
+		 * \returns  Bool indicating if there is any work left
+		 */
 		virtual bool HasWork() = 0;
+
+		/**
+		 * Method to update all resources related to the Window Manager
+		 */
 		virtual void Update() = 0;
-		
-	protected:
-		virtual void OnWindowOpen( const Events::WindowOpenedEventArgs& args );
-		virtual void OnWindowClose( const Events::WindowClosedEventArgs& args );
 	};
-}
+}}}
 
 #endif

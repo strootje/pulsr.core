@@ -1,13 +1,13 @@
-cmake_minimum_required(VERSION 2.8.12)
+cmake_minimum_required(VERSION 3.9)
 project(PackageTest CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+# use modern cxx
+set(CMAKE_CXX_STANDARD 14)
 set(CXX_STANDARD TRUE)
 
 set(BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 set(TEST_NAME PackageTests)
-set(TEST_SOURCES
-	${BASE_DIR}/Program.cpp)
+set(TEST_SOURCES ${BASE_DIR}/Program.cpp)
 
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
